@@ -41,25 +41,28 @@
             // cbx_select_port
             // 
             this.cbx_select_port.FormattingEnabled = true;
-            this.cbx_select_port.Location = new System.Drawing.Point(123, 29);
+            this.cbx_select_port.Location = new System.Drawing.Point(164, 36);
+            this.cbx_select_port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbx_select_port.Name = "cbx_select_port";
-            this.cbx_select_port.Size = new System.Drawing.Size(121, 21);
+            this.cbx_select_port.Size = new System.Drawing.Size(160, 24);
             this.cbx_select_port.TabIndex = 0;
             // 
             // lbl_select_port
             // 
             this.lbl_select_port.AutoSize = true;
-            this.lbl_select_port.Location = new System.Drawing.Point(28, 37);
+            this.lbl_select_port.Location = new System.Drawing.Point(37, 46);
+            this.lbl_select_port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_select_port.Name = "lbl_select_port";
-            this.lbl_select_port.Size = new System.Drawing.Size(59, 13);
+            this.lbl_select_port.Size = new System.Drawing.Size(71, 16);
             this.lbl_select_port.TabIndex = 1;
             this.lbl_select_port.Text = "Chọn cổng";
             // 
             // btn_start_log
             // 
-            this.btn_start_log.Location = new System.Drawing.Point(31, 88);
+            this.btn_start_log.Location = new System.Drawing.Point(41, 108);
+            this.btn_start_log.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_start_log.Name = "btn_start_log";
-            this.btn_start_log.Size = new System.Drawing.Size(213, 36);
+            this.btn_start_log.Size = new System.Drawing.Size(284, 44);
             this.btn_start_log.TabIndex = 2;
             this.btn_start_log.Text = "Bắt đầu log";
             this.btn_start_log.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // btn_stop_log
             // 
-            this.btn_stop_log.Location = new System.Drawing.Point(31, 142);
+            this.btn_stop_log.Location = new System.Drawing.Point(41, 175);
+            this.btn_stop_log.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_stop_log.Name = "btn_stop_log";
-            this.btn_stop_log.Size = new System.Drawing.Size(213, 36);
+            this.btn_stop_log.Size = new System.Drawing.Size(284, 44);
             this.btn_stop_log.TabIndex = 3;
             this.btn_stop_log.Text = "Kết thúc log";
             this.btn_stop_log.UseVisualStyleBackColor = true;
@@ -77,27 +81,28 @@
             // 
             // tbx_output
             // 
-            this.tbx_output.Location = new System.Drawing.Point(302, 20);
+            this.tbx_output.Location = new System.Drawing.Point(403, 25);
+            this.tbx_output.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbx_output.Multiline = true;
             this.tbx_output.Name = "tbx_output";
-            this.tbx_output.Size = new System.Drawing.Size(462, 392);
+            this.tbx_output.Size = new System.Drawing.Size(615, 482);
             this.tbx_output.TabIndex = 4;
             // 
             // tmr_logging_data
             // 
-            this.tmr_logging_data.Interval = 2000;
             this.tmr_logging_data.Tick += new System.EventHandler(this.tmr_logging_data_Tick);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tbx_output);
             this.Controls.Add(this.btn_stop_log);
             this.Controls.Add(this.btn_start_log);
             this.Controls.Add(this.lbl_select_port);
             this.Controls.Add(this.cbx_select_port);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.Form1_Load);

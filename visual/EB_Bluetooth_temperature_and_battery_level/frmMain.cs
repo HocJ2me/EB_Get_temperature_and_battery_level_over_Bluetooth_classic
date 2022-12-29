@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EB_Bluetooth_temperature_and_battery_level
 {
@@ -88,6 +89,8 @@ namespace EB_Bluetooth_temperature_and_battery_level
             else
             {
                 this.tbx_output.Text = text;
+                this.tbx_output.SelectionStart = this.tbx_output.Text.ToString().Length;
+                this.tbx_output.ScrollToCaret();
             }
         }
         private void btn_start_log_Click(object sender, EventArgs e)
@@ -104,10 +107,26 @@ namespace EB_Bluetooth_temperature_and_battery_level
 
         private void tmr_logging_data_Tick(object sender, EventArgs e)
         {
-            Port_deviceTest.WriteLine("AT + TEMPERATURE");
-            Console.WriteLine("AT + TEMPERATURE");
-            Port_deviceTest.WriteLine("AT + BATTERYLEVEL");
-            Console.WriteLine("AT + BATTERYLEVEL");
+            try
+            {
+                if (Port_deviceTest.IsOpen)
+                {
+                    Port_deviceTest.WriteLine("AT + TEMPERATURE");
+                    Console.WriteLine("AT + TEMPERATURE");
+                    Port_deviceTest.WriteLine("AT + BATTERYLEVEL");
+                    Console.WriteLine("AT + BATTERYLEVEL");
+                }
+                else
+                {
+                    tmr_logging_data.Enabled = false;
+                    return;
+                }
+            }
+            catch
+            {
+                tmr_logging_data.Enabled = false;
+                return;
+            }
         }
     }
 }
