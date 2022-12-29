@@ -109,13 +109,22 @@ namespace EB_Bluetooth_temperature_and_battery_level
         {
             try
             {
-                Port_deviceTest.WriteLine("AT + TEMPERATURE");
-                Console.WriteLine("AT + TEMPERATURE");
-                Port_deviceTest.WriteLine("AT + BATTERYLEVEL");
-                Console.WriteLine("AT + BATTERYLEVEL");
+                if (Port_deviceTest.IsOpen)
+                {
+                    Port_deviceTest.WriteLine("AT + TEMPERATURE");
+                    Console.WriteLine("AT + TEMPERATURE");
+                    Port_deviceTest.WriteLine("AT + BATTERYLEVEL");
+                    Console.WriteLine("AT + BATTERYLEVEL");
+                }
+                else
+                {
+                    tmr_logging_data.Enabled = false;
+                    return;
+                }
             }
             catch
             {
+                tmr_logging_data.Enabled = false;
                 return;
             }
         }
